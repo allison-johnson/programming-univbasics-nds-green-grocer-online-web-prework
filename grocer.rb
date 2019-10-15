@@ -36,7 +36,7 @@ def apply_coupons(cart, coupons)
 	  elsif item_info and item_info[:count] >= coupon[:num]
       cart << {
         :item => coupon[:item] + " W/COUPON",
-        :price => coupon[:cost]/coupon[:num],
+        :price => (coupon[:cost]/coupon[:num]).round(2),
         :clearance => item_info[:clearance],
         :count => coupon[:num]
       }
